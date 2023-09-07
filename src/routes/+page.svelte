@@ -2,9 +2,6 @@
     import { enhance } from '$app/forms';
 
     let generationLoading = false, hasGenerated = false;
-
-    /** @type {import('./$types').ActionData} */
-    export let form;
 </script>
 <div class="navbar bg-base-100">Good morning, sunshine!</div>
 
