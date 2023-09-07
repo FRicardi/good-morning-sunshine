@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"jimp": "^0.22.10",
 		"openai": "^4.4.0"
 	}
 }
