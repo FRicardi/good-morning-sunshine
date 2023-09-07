@@ -11,7 +11,9 @@ export default async (
 ) => {
     const { image, font } = await loadImageAndFont(imagePath);
 
-    const backgroundTextImage = await generateBackgroundTextImage(text, font);
+    const tidiedUpText = removeAccentsFromText(text);
+
+    const backgroundTextImage = await generateBackgroundTextImage(tidiedUpText, font);
 
     image
         .resize(imageConfig.imageWidth, imageConfig.imageHeight)
@@ -20,13 +22,23 @@ export default async (
             imageConfig.textDisplacement.x,
             imageConfig.textDisplacement.y,
             {
-                text,
+                text: tidiedUpText,
                 alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
             },
             imageConfig.imageWidth,
             imageConfig.imageHeight);
 
     await image.writeAsync("static/generated-image-with-text.png");
+}
+
+const removeAccentsFromText = (/** @type {string} */ text) => {
+    var r = text.toLowerCase();
+    const non_asciis = {'a': '[àáâãäå]', 'ae': 'æ', 'c': 'ç', 'e': '[èéêë]', 'i': '[ìíîï]', 'n': 'ñ', 'o': '[òóôõö]', 'oe': 'œ', 'u': '[ùúûűü]', 'y': '[ýÿ]'};
+    for (let i in non_asciis) { 
+        // @ts-ignore
+        r = r.replace(new RegExp(non_asciis[i], 'g'), i); 
+    }
+    return r;
 }
 
 const generateBackgroundTextImage = async (
