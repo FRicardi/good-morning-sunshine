@@ -1,9 +1,10 @@
 import { writeFileSync } from 'fs';
 import { IMAGINE_API_KEY } from "$env/static/private";
+import generateImagePrompt from './generateImagePrompt';
 
 const generateImage = async () => {
     const formData = new FormData();
-    formData.append("prompt", "A bunny at a colorful sunflower field");
+    formData.append("prompt", generateImagePrompt());
     formData.append("style_id", "31");
     formData.append("steps", "40");
     formData.append("cfg", "4.5");
