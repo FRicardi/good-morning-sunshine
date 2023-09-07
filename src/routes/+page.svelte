@@ -19,7 +19,7 @@
                 {/if}
             </div>
         {:else}
-            <img src="/generated-image.png" alt="AI response" width="520" height="520">
+            <img src="/generated-image-with-text.png" alt="AI response" width="520" height="520">
         {/if}
 		<div>
 
