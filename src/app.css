@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.artboard.square {
+    width: 520px;
+    height: 520px;
+}
