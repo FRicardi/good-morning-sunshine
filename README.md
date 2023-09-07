@@ -1,38 +1,28 @@
-# create-svelte
+# Good morning, sunshine!
+With this project, you will be able to generate the best greetings on the morning for your family and friends!
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Setup
 
-## Creating a project
+### Environment Variables
 
-If you're seeing this, you've probably already done this step. Congrats!
+For this app to work, you will need to generate your keys for Imagine Art and OpenAI. Add them as following to your .env file:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```
+IMAGINE_API_KEY=<your imagine key>
+GPT_API_KEY=<your open ai key>
 ```
 
-## Developing
+### Running the app
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To run this application locally, install the package and run it with:
 
-```bash
+```
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
 
-To create a production version of your app:
+## Resources usage
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### Fonts
+We are using the font ["LuckiestGuy"](https://fonts.google.com/specimen/Luckiest+Guy), found on google fonts. Since Jimp accepts only bitmap fonts, we've used [ttf2fnt](https://ttf2fnt.com/) and placed the outcome on this repository. There is no comercial use intent.
