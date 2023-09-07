@@ -31,10 +31,7 @@
                     update();
                 };
             }}>
-                <input type="text" placeholder="Insert the promp to generate the image" class="input input-bordered w-full max-w-xs" />
-                <br>
-                <br>
-                <button class="btn btn-primary">Generate!</button>
+                <button disabled={generationLoading} class="btn btn-primary">Generate!</button>
             </form>
 		</div>
 	</div>
