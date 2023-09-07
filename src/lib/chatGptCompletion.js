@@ -14,7 +14,7 @@ const generateCompletion = async () => {
         "presence_penalty": 0.7
     });
 
-    return completion.choices[0].message.content;
+    return completion.choices[0].message.content || "";
 }
 
 export {
